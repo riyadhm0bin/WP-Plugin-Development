@@ -1,0 +1,45 @@
+.main {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.plugin-title {
+    /*background: blue;*/
+}
+
+.page-title {
+    font-size: 26px;
+}
+
+.page-description {
+    font-size: 16px;
+}
+
+.form {
+    /*background: purple;*/
+}
+
+.field-label {
+    font-size: 18px;
+    color: black;
+}
+
+.input-fields {
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+}
+
+.textarea-row {
+    /*background: green;*/
+}
+
+.head-col, .body-col {
+    background: #dddddd;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.body-col {
+    margin-top: 20px;
+}
