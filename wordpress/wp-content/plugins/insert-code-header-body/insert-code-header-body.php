@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Insert Code in Header & Body
- * Plugin URI: https://example.com
+ * Plugin URI: #
  * Description: A simple plugin to insert code snippets into the header and body sections of a WordPress site.
  * Version: 1.0
- * Author: Your Name
- * Author URI: https://example.com
+ * Author: Riyadh Mobin
+ * Author URI: #
  */
 
 if (!defined('ABSPATH')) {
@@ -28,25 +28,35 @@ add_action('admin_init', 'ichb_register_settings');
 // Settings page
 function ichb_settings_page() {
     ?>
-    <div class="wrap">
+
+    <style>
+        textarea
+        {
+            /*border:1px solid red;*/
+            width:100%;
+            /*margin:5px 0;*/
+            /*padding-right:30px;*/
+        }
+        .textarea-row{
+            padding-right: 20px;
+        }
+    </style>
+
+    <div class="">
         <h1>Insert Code in Header & Body</h1>
         <form method="post" action="options.php">
             <?php settings_fields('ichb_settings_group'); ?>
             <?php do_settings_sections('ichb_settings_group'); ?>
-            <table class="form-table">
-                <tr valign="top">
-                    <th scope="row">Header Code (Inside &lt;head&gt;)</th>
-                    <td>
-                        <textarea name="ichb_header_code" rows="5" cols="50"><?php echo esc_textarea(get_option('ichb_header_code')); ?></textarea>
-                    </td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Body Code (After &lt;body&gt; tag)</th>
-                    <td>
-                        <textarea name="ichb_body_code" rows="5" cols="50"><?php echo esc_textarea(get_option('ichb_body_code')); ?></textarea>
-                    </td>
-                </tr>
-            </table>
+            <div class="textarea-row">
+                <div class="head-col">
+                    <h4>Header Code (Inside &lt;head&gt;)</h4>
+                    <textarea name="ichb_header_code" rows="10"><?php echo esc_textarea(get_option('ichb_header_code')); ?></textarea>
+                </div>
+                <div class="body-col">
+                    <h4>Body Code (After &lt;body&gt; tag)</h4>
+                    <textarea name="ichb_body_code" rows="10"><?php echo esc_textarea(get_option('ichb_body_code')); ?></textarea>
+                </div>
+            </div>
             <?php submit_button(); ?>
         </form>
     </div>
