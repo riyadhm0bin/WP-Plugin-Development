@@ -3,11 +3,13 @@
 // Add settings menu
 function ichb_add_admin_menu() {
     add_menu_page(
-        'Insert Code',
-        'Insert Code',
+        'Insert Code Snippets',
+        'Insert Code Snippets',
         'manage_options',
         'insert_code_settings',
-        'ichb_settings_page'
+        'ichb_settings_page',
+        'dashicons-media-code',
+        99
     );
 }
 add_action('admin_menu', 'ichb_add_admin_menu');
