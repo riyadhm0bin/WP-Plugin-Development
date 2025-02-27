@@ -9,7 +9,7 @@
  */
 
 if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
+    exit;
 }
 
 // Add settings menu
@@ -30,52 +30,56 @@ function ichb_register_settings() {
 }
 add_action('admin_init', 'ichb_register_settings');
 
-// Settings page
+// Page
 function ichb_settings_page() {
     ?>
 
     <style>
         .main{
-            background: red;
             margin-top: 20px;
             margin-right: 20px;
-            padding: 10px;
         }
 
         .plugin-title{
-            background: blue;
+            /*background: blue;*/
         }
 
         .page-title{
-            background: #ed00ff;
+            /*background: #ed00ff;*/
+            font-size: 26px;
         }
 
         .page-description{
-
+            font-size: 16px;
         }
 
         .form{
-            background: purple;
+            /*background: purple;*/
+        }
+
+        .field-label{
+            font-size: 18px;
+            color: black;
         }
 
         .input-fields{
+            margin-top: 10px;
             width:100%;
+            border: none;
         }
 
         .textarea-row{
-            background: green;
+            /*background: green;*/
         }
 
-        .head-col{
-            background: yellow;
+        .head-col, .body-col{
+            background: #dddddd;
+            padding: 10px;
+            border-radius: 7px;
         }
 
         .body-col{
-            background: #0a7aff;
-        }
-
-        .field-lable{
-
+            margin-top: 20px;
         }
     </style>
 
@@ -90,22 +94,24 @@ function ichb_settings_page() {
                 <?php do_settings_sections('ichb_settings_group'); ?>
                 <div class="textarea-row">
                     <div class="head-col">
-                        <h4 class="field-lable">Header Code (Inside &lt;head&gt;)</h4>
+                        <label class="field-label">Header Code (Inside &lt;head&gt; Tag)</label>
                         <textarea class="input-fields" name="ichb_header_code" rows="10"><?php echo esc_textarea(get_option('ichb_header_code')); ?></textarea>
                     </div>
                     <div class="body-col">
-                        <h4 class="field-lable">Body Code (After &lt;body&gt; tag)</h4>
+                        <lable class="field-label">Body Code (After &lt;body&gt; Tag)</lable>
                         <textarea class="input-fields" name="ichb_body_code" rows="10"><?php echo esc_textarea(get_option('ichb_body_code')); ?></textarea>
                     </div>
                 </div>
-                <?php submit_button(); ?>
+                <div class="save-button">
+                    <?php submit_button(); ?>
+                </div>
             </form>
         </div>
     </div>
     <?php
 }
 
-// Insert code into the head
+// Insert code into the head tag
 function ichb_insert_header_code() {
     $header_code = get_option('ichb_header_code');
     if ($header_code) {
