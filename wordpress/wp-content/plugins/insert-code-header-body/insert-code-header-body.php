@@ -14,7 +14,12 @@ if (!defined('ABSPATH')) {
 
 // Add settings menu
 function ichb_add_admin_menu() {
-    add_menu_page('Insert Code', 'Insert Code', 'manage_options', 'insert_code_settings', 'ichb_settings_page');
+    add_menu_page(  'Insert Code',
+                    'Insert Code',
+                    'manage_options',
+                    'insert_code_settings',
+                    'ichb_settings_page'
+    );
 }
 add_action('admin_menu', 'ichb_add_admin_menu');
 
@@ -30,35 +35,72 @@ function ichb_settings_page() {
     ?>
 
     <style>
-        textarea
-        {
-            /*border:1px solid red;*/
-            width:100%;
-            /*margin:5px 0;*/
-            /*padding-right:30px;*/
+        .main{
+            background: red;
+            margin-top: 20px;
+            margin-right: 20px;
+            padding: 10px;
         }
+
+        .plugin-title{
+            background: blue;
+        }
+
+        .page-title{
+            background: #ed00ff;
+        }
+
+        .page-description{
+
+        }
+
+        .form{
+            background: purple;
+        }
+
+        .input-fields{
+            width:100%;
+        }
+
         .textarea-row{
-            padding-right: 20px;
+            background: green;
+        }
+
+        .head-col{
+            background: yellow;
+        }
+
+        .body-col{
+            background: #0a7aff;
+        }
+
+        .field-lable{
+
         }
     </style>
 
-    <div class="">
-        <h1>Insert Code in Header & Body</h1>
-        <form method="post" action="options.php">
-            <?php settings_fields('ichb_settings_group'); ?>
-            <?php do_settings_sections('ichb_settings_group'); ?>
-            <div class="textarea-row">
-                <div class="head-col">
-                    <h4>Header Code (Inside &lt;head&gt;)</h4>
-                    <textarea name="ichb_header_code" rows="10"><?php echo esc_textarea(get_option('ichb_header_code')); ?></textarea>
+    <div class="main">
+        <div class="plugin-title">
+            <h1 class="page-title">Insert Code in Header & Body</h1>
+            <p class="page-description">Insert Code in Header & Body is a lightweight WordPress plugin that allows administrators to easily insert custom code snippets into the <head> and <body> sections of their website. Ideal for adding tracking scripts, custom CSS, meta tags, and other integrations without modifying theme files.</p>
+        </div>
+        <div class="form">
+            <form method="post" action="options.php">
+                <?php settings_fields('ichb_settings_group'); ?>
+                <?php do_settings_sections('ichb_settings_group'); ?>
+                <div class="textarea-row">
+                    <div class="head-col">
+                        <h4 class="field-lable">Header Code (Inside &lt;head&gt;)</h4>
+                        <textarea class="input-fields" name="ichb_header_code" rows="10"><?php echo esc_textarea(get_option('ichb_header_code')); ?></textarea>
+                    </div>
+                    <div class="body-col">
+                        <h4 class="field-lable">Body Code (After &lt;body&gt; tag)</h4>
+                        <textarea class="input-fields" name="ichb_body_code" rows="10"><?php echo esc_textarea(get_option('ichb_body_code')); ?></textarea>
+                    </div>
                 </div>
-                <div class="body-col">
-                    <h4>Body Code (After &lt;body&gt; tag)</h4>
-                    <textarea name="ichb_body_code" rows="10"><?php echo esc_textarea(get_option('ichb_body_code')); ?></textarea>
-                </div>
-            </div>
-            <?php submit_button(); ?>
-        </form>
+                <?php submit_button(); ?>
+            </form>
+        </div>
     </div>
     <?php
 }
