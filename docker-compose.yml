@@ -24,6 +24,8 @@ services:
       MYSQL_USER: wp_plugin_development
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "3307:3306"  # Expose MySQL on port 3307 for PHPStorm connection
     volumes:
       - db_data:/var/lib/mysql
 
