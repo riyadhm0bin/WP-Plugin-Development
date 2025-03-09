@@ -1,0 +1,12 @@
+Mar 03 2025 18:04:32
+{"Number":2,"Message":"fopen(\/var\/www\/html\/wp-content\/plugins\/insert-code-header-body\/includes\/admin-settings.php): Failed to open stream: Permission denied","File":"\/var\/www\/html\/wp-content\/plugins\/all-in-one-wp-migration\/lib\/vendor\/servmask\/archiver\/class-ai1wm-extractor.php","Line":486}
+
+Mar 03 2025 18:04:32
+{"Number":2,"Message":"fopen(\/var\/www\/html\/wp-content\/plugins\/insert-code-header-body\/includes\/hooks.php): Failed to open stream: Permission denied","File":"\/var\/www\/html\/wp-content\/plugins\/all-in-one-wp-migration\/lib\/vendor\/servmask\/archiver\/class-ai1wm-extractor.php","Line":486}
+
+Mar 03 2025 18:04:32
+{"Number":2,"Message":"fopen(\/var\/www\/html\/wp-content\/plugins\/insert-code-header-body\/assets\/css\/style.css): Failed to open stream: Permission denied","File":"\/var\/www\/html\/wp-content\/plugins\/all-in-one-wp-migration\/lib\/vendor\/servmask\/archiver\/class-ai1wm-extractor.php","Line":486}
+
+Mar 03 2025 18:04:32
+{"Number":2,"Message":"fopen(\/var\/www\/html\/wp-content\/plugins\/insert-code-header-body\/insert-code-header-body.php): Failed to open stream: Permission denied","File":"\/var\/www\/html\/wp-content\/plugins\/all-in-one-wp-migration\/lib\/vendor\/servmask\/archiver\/class-ai1wm-extractor.php","Line":486}
+
