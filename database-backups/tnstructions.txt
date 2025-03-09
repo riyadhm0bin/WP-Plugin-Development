@@ -1,0 +1,4 @@
+Step 1:
+        Create a table name same as previous/
+Step 2:
+        Import a backup sql file.
